@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayino Car - Location de Voitures</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Bannière Prototype -->
+    <div class="prototype-banner">
+        <div class="prototype-content">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span><strong>Prototype Version</strong> — Not for commercial use</span>
+            <button class="close-banner" onclick="closeBanner()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-car"></i>
+                <span>Rayino Car</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#vehicules">Véhicules</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Louez la voiture de vos rêves</h1>
+                    <p>Des véhicules de qualité à des prix imbattables</p>
+                    
+                    <!-- Formulaire de réservation rapide -->
+                    <div class="search-box">
+                        <h3>Trouvez votre voiture</h3>
+                        <form class="search-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label><i class="fas fa-map-marker-alt"></i> Lieu de prise en charge</label>
+                                    <input type="text" placeholder="Paris, France" required>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-calendar"></i> Date de départ</label>
+                                    <input type="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-calendar"></i> Date de retour</label>
+                                    <input type="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-car"></i> Type de véhicule</label>
+                                    <select>
+                                        <option>Tous les véhicules</option>
+                                        <option>Économique</option>
+                                        <option>Compact</option>
+                                        <option>SUV</option>
+                                        <option>Luxe</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-search">
+                                <i class="fas fa-search"></i> Rechercher
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Pourquoi nous choisir ?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Assurance complète</h3>
+                    <p>Tous nos véhicules sont assurés tous risques pour votre sécurité</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Support 24/7</h3>
+                    <p>Une équipe disponible à tout moment pour vous assister</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Meilleurs prix</h3>
+                    <p>Des tarifs compétitifs sans frais cachés</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3>Flotte moderne</h3>
+                    <p>Véhicules récents et bien entretenus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Véhicules Section -->
+    <section id="vehicules" class="vehicles">
+        <div class="container">
+            <h2 class="section-title">Notre flotte de véhicules</h2>
+            <div class="vehicles-grid">
+                <!-- Véhicule 1 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-badge">Populaire</div>
+                    <div class="vehicle-image">
+                        <img src="images/car1.jpg" alt="Renault Clio">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Renault Clio</h3>
+                        <p class="vehicle-category">Économique</p>
+                        <div class="vehicle-features">
+                            <span><i class="fas fa-users"></i> 5 places</span>
+                            <span><i class="fas fa-cog"></i> Manuelle</span>
+                            <span><i class="fas fa-suitcase"></i> 2 bagages</span>
+                        </div>
+                        <div class="vehicle-specs">
+                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">35€<small>/jour</small></span>
+                            <button class="btn-reserve">Réserver</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Véhicule 2 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="images/car1.jpg" alt="Peugeot 308">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Peugeot 308</h3>
+                        <p class="vehicle-category">Compact</p>
+                        <div class="vehicle-features">
+                            <span><i class="fas fa-users"></i> 5 places</span>
+                            <span><i class="fas fa-cog"></i> Automatique</span>
+                            <span><i class="fas fa-suitcase"></i> 3 bagages</span>
+                        </div>
+                        <div class="vehicle-specs">
+                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
+                            <span><i class="fas fa-gas-pump"></i> Essence</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">45€<small>/jour</small></span>
+                            <button class="btn-reserve">Réserver</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Véhicule 3 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-badge" style="background: #e67e22;">Nouveau</div>
+                    <div class="vehicle-image">
+                        <img src="images/car1.jpg" alt="BMW X3">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>BMW X3</h3>
+                        <p class="vehicle-category">SUV</p>
+                        <div class="vehicle-features">
+                            <span><i class="fas fa-users"></i> 5 places</span>
+                            <span><i class="fas fa-cog"></i> Automatique</span>
+                            <span><i class="fas fa-suitcase"></i> 4 bagages</span>
+                        </div>
+                        <div class="vehicle-specs">
+                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">85€<small>/jour</small></span>
+                            <button class="btn-reserve">Réserver</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Véhicule 4 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="images/car1.jpg" alt="Mercedes Classe C">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Mercedes Classe C</h3>
+                        <p class="vehicle-category">Luxe</p>
+                        <div class="vehicle-features">
+                            <span><i class="fas fa-users"></i> 5 places</span>
+                            <span><i class="fas fa-cog"></i> Automatique</span>
+                            <span><i class="fas fa-suitcase"></i> 3 bagages</span>
+                        </div>
+                        <div class="vehicle-specs">
+                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
+                            <span><i class="fas fa-gas-pump"></i> Essence</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">120€<small>/jour</small></span>
+                            <button class="btn-reserve">Réserver</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Véhicule 5 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="images/car1.jpg" alt="Citroën C3">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Citroën C3</h3>
+                        <p class="vehicle-category">Économique</p>
+                        <div class="vehicle-features">
+                            <span><i class="fas fa-users"></i> 5 places</span>
+                            <span><i class="fas fa-cog"></i> Manuelle</span>
+                            <span><i class="fas fa-suitcase"></i> 2 bagages</span>
+                        </div>
+                        <div class="vehicle-specs">
+                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
+                            <span><i class="fas fa-gas-pump"></i> Essence</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">32€<small>/jour</small></span>
+                            <button class="btn-reserve">Réserver</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Véhicule 6 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="images/car1.jpg" alt="Audi Q5">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Audi Q5</h3>
+                        <p class="vehicle-category">SUV</p>
+                        <div class="vehicle-features">
+                            <span><i class="fas fa-users"></i> 5 places</span>
+                            <span><i class="fas fa-cog"></i> Automatique</span>
+                            <span><i class="fas fa-suitcase"></i> 4 bagages</span>
+                        </div>
+                        <div class="vehicle-specs">
+                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">95€<small>/jour</small></span>
+                            <button class="btn-reserve">Réserver</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Véhicule 7: Peugeot 3008 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-badge" style="background: #e67e22;">Nouveau</div>
+                    <div class="vehicle-image">
+                        <img src="images/car1.jpg" alt="Peugeot 3008">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Peugeot 3008</h3>
+                        <p class="vehicle-category">SUV</p>
+                        <div class="vehicle-features">
+                            <span><i class="fas fa-users"></i> 5 places</span>
+                            <span><i class="fas fa-cog"></i> Automatique</span>
+                            <span><i class="fas fa-suitcase"></i> 4 bagages</span>
+                        </div>
+                        <div class="vehicle-specs">
+                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
+                            <span><i class="fas fa-gas-pump"></i> Hybride</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">75€<small>/jour</small></span>
+                            <button class="btn-reserve">Réserver</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarifs Section -->
+    <section id="tarifs" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Nos tarifs</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Court terme</h3>
+                    <div class="pricing-amount">
+                        <span class="amount">À partir de 35€</span>
+                        <span class="period">/jour</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Kilométrage illimité</li>
+                        <li><i class="fas fa-check"></i> Assurance de base</li>
+                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
+                        <li><i class="fas fa-check"></i> Annulation gratuite</li>
+                    </ul>
+                    <button class="btn-pricing">Choisir</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Recommandé</div>
+                    <h3>Moyen terme</h3>
+                    <div class="pricing-amount">
+                        <span class="amount">À partir de 700€</span>
+                        <span class="period">/mois</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Kilométrage illimité</li>
+                        <li><i class="fas fa-check"></i> Assurance tous risques</li>
+                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
+                        <li><i class="fas fa-check"></i> Conducteur additionnel</li>
+                        <li><i class="fas fa-check"></i> GPS inclus</li>
+                    </ul>
+                    <button class="btn-pricing">Choisir</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Long terme</h3>
+                    <div class="pricing-amount">
+                        <span class="amount">Tarif personnalisé</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Kilométrage illimité</li>
+                        <li><i class="fas fa-check"></i> Assurance tous risques</li>
+                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
+                        <li><i class="fas fa-check"></i> Entretien inclus</li>
+                        <li><i class="fas fa-check"></i> Véhicule de remplacement</li>
+                    </ul>
+                    <button class="btn-pricing">Nous contacter</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-nous</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Nos coordonnées</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>Rabat<br>Rabat</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>06 ** ** ** **</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@autoloc.fr</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horaires</h4>
+                            <p>Lun - Sam: 8h00 - 20h00<br>Dim: 9h00 - 18h00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envoyez-nous un message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Votre téléphone">
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="Votre message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>À propos</h4>
+                    <ul>
+                        <li><a href="#">Qui sommes-nous</a></li>
+                        <li><a href="#">Notre flotte</a></li>
+                        <li><a href="#">Nos agences</a></li>
+                        <li><a href="#">Carrières</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Location courte durée</a></li>
+                        <li><a href="#">Location longue durée</a></li>
+                        <li><a href="#">Location avec chauffeur</a></li>
+                        <li><a href="#">Entreprises</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="#">Conditions générales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Assurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h5>Newsletter</h5>
+                        <form>
+                            <input type="email" placeholder="Votre email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AutoLoc. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

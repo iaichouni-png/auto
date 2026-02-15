@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rayino Car - Location de Voitures</title>
+    <title>AutoLoca - Location de Voitures</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,7 +12,7 @@
     <div class="prototype-banner">
         <div class="prototype-content">
             <i class="fas fa-exclamation-triangle"></i>
-            <span><strong>Prototype Version</strong> — Not for commercial use</span>
+            <span><strong data-i18n="prototype.title">Prototype Version</strong> — <span data-i18n="prototype.subtitle">Not for commercial use</span></span>
             <button class="close-banner" onclick="closeBanner()">
                 <i class="fas fa-times"></i>
             </button>
@@ -27,12 +27,33 @@
                 <span>AutoLoca</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#vehicules">Véhicules</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#tarifs">Tarifs</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accueil" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="#vehicules" data-i18n="nav.vehicles">Véhicules</a></li>
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#tarifs" data-i18n="nav.pricing">Tarifs</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <div class="language-selector">
+                <button class="lang-dropdown-btn" id="langDropdownBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">FR</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown-menu" id="langDropdownMenu">
+                    <button class="lang-option" data-lang="fr">
+                        <span class="lang-code">FR</span>
+                        <span class="lang-name">Français</span>
+                    </button>
+                    <button class="lang-option" data-lang="en">
+                        <span class="lang-code">EN</span>
+                        <span class="lang-name">English</span>
+                    </button>
+                    <button class="lang-option" data-lang="ar">
+                        <span class="lang-code">AR</span>
+                        <span class="lang-name">العربية</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -41,39 +62,39 @@
         <div class="hero-overlay">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Louez la voiture de vos rêves</h1>
-                    <p>Des véhicules de qualité à des prix imbattables</p>
+                    <h1 data-i18n="hero.title">Louez la voiture de vos rêves</h1>
+                    <p data-i18n="hero.subtitle">Des véhicules de qualité à des prix imbattables</p>
                     
                     <!-- Formulaire de réservation rapide -->
                     <div class="search-box">
-                        <h3>Trouvez votre voiture</h3>
+                        <h3 data-i18n="hero.searchTitle">Trouvez votre voiture</h3>
                         <form class="search-form">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label><i class="fas fa-map-marker-alt"></i> Lieu de prise en charge</label>
-                                    <input type="text" placeholder="Paris, France" required>
+                                    <label><i class="fas fa-map-marker-alt"></i> <span data-i18n="hero.pickupLocation">Lieu de prise en charge</span></label>
+                                    <input type="text" data-i18n-placeholder="hero.pickupPlaceholder" placeholder="Paris, France" required>
                                 </div>
                                 <div class="form-group">
-                                    <label><i class="fas fa-calendar"></i> Date de départ</label>
+                                    <label><i class="fas fa-calendar"></i> <span data-i18n="hero.startDate">Date de départ</span></label>
                                     <input type="date" required>
                                 </div>
                                 <div class="form-group">
-                                    <label><i class="fas fa-calendar"></i> Date de retour</label>
+                                    <label><i class="fas fa-calendar"></i> <span data-i18n="hero.returnDate">Date de retour</span></label>
                                     <input type="date" required>
                                 </div>
                                 <div class="form-group">
-                                    <label><i class="fas fa-car"></i> Type de véhicule</label>
-                                    <select>
-                                        <option>Tous les véhicules</option>
-                                        <option>Économique</option>
-                                        <option>Compact</option>
-                                        <option>SUV</option>
-                                        <option>Luxe</option>
+                                    <label><i class="fas fa-car"></i> <span data-i18n="hero.vehicleType">Type de véhicule</span></label>
+                                    <select id="vehicle-type-select">
+                                        <option data-i18n="hero.allVehicles">Tous les véhicules</option>
+                                        <option data-i18n="hero.economic">Économique</option>
+                                        <option data-i18n="hero.compact">Compact</option>
+                                        <option data-i18n="hero.suv">SUV</option>
+                                        <option data-i18n="hero.luxury">Luxe</option>
                                     </select>
                                 </div>
                             </div>
                             <button type="submit" class="btn-search">
-                                <i class="fas fa-search"></i> Rechercher
+                                <i class="fas fa-search"></i> <span data-i18n="hero.searchButton">Rechercher</span>
                             </button>
                         </form>
                     </div>
@@ -85,35 +106,35 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Pourquoi nous choisir ?</h2>
+            <h2 class="section-title" data-i18n="services.title">Pourquoi nous choisir ?</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Assurance complète</h3>
-                    <p>Tous nos véhicules sont assurés tous risques pour votre sécurité</p>
+                    <h3 data-i18n="services.insurance.title">Assurance complète</h3>
+                    <p data-i18n="services.insurance.description">Tous nos véhicules sont assurés tous risques pour votre sécurité</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3>Support 24/7</h3>
-                    <p>Une équipe disponible à tout moment pour vous assister</p>
+                    <h3 data-i18n="services.support.title">Support 24/7</h3>
+                    <p data-i18n="services.support.description">Une équipe disponible à tout moment pour vous assister</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tag"></i>
                     </div>
-                    <h3>Meilleurs prix</h3>
-                    <p>Des tarifs compétitifs sans frais cachés</p>
+                    <h3 data-i18n="services.pricing.title">Meilleurs prix</h3>
+                    <p data-i18n="services.pricing.description">Des tarifs compétitifs sans frais cachés</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-car-side"></i>
                     </div>
-                    <h3>Flotte moderne</h3>
-                    <p>Véhicules récents et bien entretenus</p>
+                    <h3 data-i18n="services.fleet.title">Flotte moderne</h3>
+                    <p data-i18n="services.fleet.description">Véhicules récents et bien entretenus</p>
                 </div>
             </div>
         </div>
@@ -122,29 +143,29 @@
     <!-- Véhicules Section -->
     <section id="vehicules" class="vehicles">
         <div class="container">
-            <h2 class="section-title">Notre flotte de véhicules</h2>
+            <h2 class="section-title" data-i18n="vehicles.title">Notre flotte de véhicules</h2>
             <div class="vehicles-grid">
                 <!-- Véhicule 1 -->
                 <div class="vehicle-card" data-category="Économique" data-vehicle-name="Renault Clio" data-price="35">
-                    <div class="vehicle-badge">Populaire</div>
+                    <div class="vehicle-badge" data-i18n="vehicles.popular">Populaire</div>
                     <div class="vehicle-image">
                         <img src="images/car1.jpg" alt="Renault Clio">
                     </div>
                     <div class="vehicle-info">
                         <h3>Renault Clio</h3>
-                        <p class="vehicle-category">Économique</p>
+                        <p class="vehicle-category" data-i18n="hero.economic">Économique</p>
                         <div class="vehicle-features">
-                            <span><i class="fas fa-users"></i> 5 places</span>
-                            <span><i class="fas fa-cog"></i> Manuelle</span>
-                            <span><i class="fas fa-suitcase"></i> 2 bagages</span>
+                            <span><i class="fas fa-users"></i> 5 <span data-i18n="vehicles.seats">places</span></span>
+                            <span><i class="fas fa-cog"></i> <span data-i18n="vehicles.manual">Manuelle</span></span>
+                            <span><i class="fas fa-suitcase"></i> 2 <span data-i18n="vehicles.luggage">bagages</span></span>
                         </div>
                         <div class="vehicle-specs">
-                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
-                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-snowflake"></i> <span data-i18n="vehicles.airConditioning">Climatisation</span></span>
+                            <span><i class="fas fa-gas-pump"></i> <span data-i18n="vehicles.diesel">Diesel</span></span>
                         </div>
                         <div class="vehicle-price">
-                            <span class="price">350 MAD<small>/jour</small></span>
-                            <button class="btn-reserve">Réserver</button>
+                            <span class="price">350 MAD<small data-i18n="vehicles.perDay">/jour</small></span>
+                            <button class="btn-reserve" data-i18n="vehicles.reserve">Réserver</button>
                         </div>
                     </div>
                 </div>
@@ -156,44 +177,44 @@
                     </div>
                     <div class="vehicle-info">
                         <h3>Peugeot 308</h3>
-                        <p class="vehicle-category">Compact</p>
+                        <p class="vehicle-category" data-i18n="hero.compact">Compact</p>
                         <div class="vehicle-features">
-                            <span><i class="fas fa-users"></i> 5 places</span>
-                            <span><i class="fas fa-cog"></i> Automatique</span>
-                            <span><i class="fas fa-suitcase"></i> 3 bagages</span>
+                            <span><i class="fas fa-users"></i> 5 <span data-i18n="vehicles.seats">places</span></span>
+                            <span><i class="fas fa-cog"></i> <span data-i18n="vehicles.automatic">Automatique</span></span>
+                            <span><i class="fas fa-suitcase"></i> 3 <span data-i18n="vehicles.luggage">bagages</span></span>
                         </div>
                         <div class="vehicle-specs">
-                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
-                            <span><i class="fas fa-gas-pump"></i> Essence</span>
+                            <span><i class="fas fa-snowflake"></i> <span data-i18n="vehicles.airConditioning">Climatisation</span></span>
+                            <span><i class="fas fa-gas-pump"></i> <span data-i18n="vehicles.gasoline">Essence</span></span>
                         </div>
                         <div class="vehicle-price">
-                            <span class="price">450 MAD<small>/jour</small></span>
-                            <button class="btn-reserve">Réserver</button>
+                            <span class="price">450 MAD<small data-i18n="vehicles.perDay">/jour</small></span>
+                            <button class="btn-reserve" data-i18n="vehicles.reserve">Réserver</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Véhicule 3 -->
                 <div class="vehicle-card" data-category="SUV" data-vehicle-name="BMW X3" data-price="85">
-                    <div class="vehicle-badge" style="background: #e67e22;">Nouveau</div>
+                    <div class="vehicle-badge" style="background: #e67e22;" data-i18n="vehicles.new">Nouveau</div>
                     <div class="vehicle-image">
                         <img src="images/car1.jpg" alt="BMW X3">
                     </div>
                     <div class="vehicle-info">
                         <h3>BMW X3</h3>
-                        <p class="vehicle-category">SUV</p>
+                        <p class="vehicle-category" data-i18n="hero.suv">SUV</p>
                         <div class="vehicle-features">
-                            <span><i class="fas fa-users"></i> 5 places</span>
-                            <span><i class="fas fa-cog"></i> Automatique</span>
-                            <span><i class="fas fa-suitcase"></i> 4 bagages</span>
+                            <span><i class="fas fa-users"></i> 5 <span data-i18n="vehicles.seats">places</span></span>
+                            <span><i class="fas fa-cog"></i> <span data-i18n="vehicles.automatic">Automatique</span></span>
+                            <span><i class="fas fa-suitcase"></i> 4 <span data-i18n="vehicles.luggage">bagages</span></span>
                         </div>
                         <div class="vehicle-specs">
-                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
-                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-snowflake"></i> <span data-i18n="vehicles.airConditioning">Climatisation</span></span>
+                            <span><i class="fas fa-gas-pump"></i> <span data-i18n="vehicles.diesel">Diesel</span></span>
                         </div>
                         <div class="vehicle-price">
-                            <span class="price">850 MAD<small>/jour</small></span>
-                            <button class="btn-reserve">Réserver</button>
+                            <span class="price">850 MAD<small data-i18n="vehicles.perDay">/jour</small></span>
+                            <button class="btn-reserve" data-i18n="vehicles.reserve">Réserver</button>
                         </div>
                     </div>
                 </div>
@@ -205,19 +226,19 @@
                     </div>
                     <div class="vehicle-info">
                         <h3>Mercedes Classe C</h3>
-                        <p class="vehicle-category">Luxe</p>
+                        <p class="vehicle-category" data-i18n="hero.luxury">Luxe</p>
                         <div class="vehicle-features">
-                            <span><i class="fas fa-users"></i> 5 places</span>
-                            <span><i class="fas fa-cog"></i> Automatique</span>
-                            <span><i class="fas fa-suitcase"></i> 3 bagages</span>
+                            <span><i class="fas fa-users"></i> 5 <span data-i18n="vehicles.seats">places</span></span>
+                            <span><i class="fas fa-cog"></i> <span data-i18n="vehicles.automatic">Automatique</span></span>
+                            <span><i class="fas fa-suitcase"></i> 3 <span data-i18n="vehicles.luggage">bagages</span></span>
                         </div>
                         <div class="vehicle-specs">
-                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
-                            <span><i class="fas fa-gas-pump"></i> Essence</span>
+                            <span><i class="fas fa-snowflake"></i> <span data-i18n="vehicles.airConditioning">Climatisation</span></span>
+                            <span><i class="fas fa-gas-pump"></i> <span data-i18n="vehicles.gasoline">Essence</span></span>
                         </div>
                         <div class="vehicle-price">
-                            <span class="price">1200 MAD<small>/jour</small></span>
-                            <button class="btn-reserve">Réserver</button>
+                            <span class="price">1200 MAD<small data-i18n="vehicles.perDay">/jour</small></span>
+                            <button class="btn-reserve" data-i18n="vehicles.reserve">Réserver</button>
                         </div>
                     </div>
                 </div>
@@ -229,19 +250,19 @@
                     </div>
                     <div class="vehicle-info">
                         <h3>Citroën C3</h3>
-                        <p class="vehicle-category">Économique</p>
+                        <p class="vehicle-category" data-i18n="hero.economic">Économique</p>
                         <div class="vehicle-features">
-                            <span><i class="fas fa-users"></i> 5 places</span>
-                            <span><i class="fas fa-cog"></i> Manuelle</span>
-                            <span><i class="fas fa-suitcase"></i> 2 bagages</span>
+                            <span><i class="fas fa-users"></i> 5 <span data-i18n="vehicles.seats">places</span></span>
+                            <span><i class="fas fa-cog"></i> <span data-i18n="vehicles.manual">Manuelle</span></span>
+                            <span><i class="fas fa-suitcase"></i> 2 <span data-i18n="vehicles.luggage">bagages</span></span>
                         </div>
                         <div class="vehicle-specs">
-                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
-                            <span><i class="fas fa-gas-pump"></i> Essence</span>
+                            <span><i class="fas fa-snowflake"></i> <span data-i18n="vehicles.airConditioning">Climatisation</span></span>
+                            <span><i class="fas fa-gas-pump"></i> <span data-i18n="vehicles.gasoline">Essence</span></span>
                         </div>
                         <div class="vehicle-price">
-                            <span class="price">320 MAD<small>/jour</small></span>
-                            <button class="btn-reserve">Réserver</button>
+                            <span class="price">320 MAD<small data-i18n="vehicles.perDay">/jour</small></span>
+                            <button class="btn-reserve" data-i18n="vehicles.reserve">Réserver</button>
                         </div>
                     </div>
                 </div>
@@ -253,44 +274,44 @@
                     </div>
                     <div class="vehicle-info">
                         <h3>Audi Q5</h3>
-                        <p class="vehicle-category">SUV</p>
+                        <p class="vehicle-category" data-i18n="hero.suv">SUV</p>
                         <div class="vehicle-features">
-                            <span><i class="fas fa-users"></i> 5 places</span>
-                            <span><i class="fas fa-cog"></i> Automatique</span>
-                            <span><i class="fas fa-suitcase"></i> 4 bagages</span>
+                            <span><i class="fas fa-users"></i> 5 <span data-i18n="vehicles.seats">places</span></span>
+                            <span><i class="fas fa-cog"></i> <span data-i18n="vehicles.automatic">Automatique</span></span>
+                            <span><i class="fas fa-suitcase"></i> 4 <span data-i18n="vehicles.luggage">bagages</span></span>
                         </div>
                         <div class="vehicle-specs">
-                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
-                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-snowflake"></i> <span data-i18n="vehicles.airConditioning">Climatisation</span></span>
+                            <span><i class="fas fa-gas-pump"></i> <span data-i18n="vehicles.diesel">Diesel</span></span>
                         </div>
                         <div class="vehicle-price">
-                            <span class="price">950 MAD<small>/jour</small></span>
-                            <button class="btn-reserve">Réserver</button>
+                            <span class="price">950 MAD<small data-i18n="vehicles.perDay">/jour</small></span>
+                            <button class="btn-reserve" data-i18n="vehicles.reserve">Réserver</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Véhicule 7: Peugeot 3008 -->
                 <div class="vehicle-card" data-category="SUV" data-vehicle-name="Peugeot 3008" data-price="75">
-                    <div class="vehicle-badge" style="background: #e67e22;">Nouveau</div>
+                    <div class="vehicle-badge" style="background: #e67e22;" data-i18n="vehicles.new">Nouveau</div>
                     <div class="vehicle-image">
                         <img src="images/car1.jpg" alt="Peugeot 3008">
                     </div>
                     <div class="vehicle-info">
                         <h3>Peugeot 3008</h3>
-                        <p class="vehicle-category">SUV</p>
+                        <p class="vehicle-category" data-i18n="hero.suv">SUV</p>
                         <div class="vehicle-features">
-                            <span><i class="fas fa-users"></i> 5 places</span>
-                            <span><i class="fas fa-cog"></i> Automatique</span>
-                            <span><i class="fas fa-suitcase"></i> 4 bagages</span>
+                            <span><i class="fas fa-users"></i> 5 <span data-i18n="vehicles.seats">places</span></span>
+                            <span><i class="fas fa-cog"></i> <span data-i18n="vehicles.automatic">Automatique</span></span>
+                            <span><i class="fas fa-suitcase"></i> 4 <span data-i18n="vehicles.luggage">bagages</span></span>
                         </div>
                         <div class="vehicle-specs">
-                            <span><i class="fas fa-snowflake"></i> Climatisation</span>
-                            <span><i class="fas fa-gas-pump"></i> Hybride</span>
+                            <span><i class="fas fa-snowflake"></i> <span data-i18n="vehicles.airConditioning">Climatisation</span></span>
+                            <span><i class="fas fa-gas-pump"></i> <span data-i18n="vehicles.hybrid">Hybride</span></span>
                         </div>
                         <div class="vehicle-price">
-                            <span class="price">750 MAD<small>/jour</small></span>
-                            <button class="btn-reserve">Réserver</button>
+                            <span class="price">750 MAD<small data-i18n="vehicles.perDay">/jour</small></span>
+                            <button class="btn-reserve" data-i18n="vehicles.reserve">Réserver</button>
                         </div>
                     </div>
                 </div>
@@ -301,53 +322,53 @@
     <!-- Tarifs Section -->
     <section id="tarifs" class="pricing">
         <div class="container">
-            <h2 class="section-title">Nos tarifs</h2>
+            <h2 class="section-title" data-i18n="pricing.title">Nos tarifs</h2>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3>Court terme</h3>
+                    <h3 data-i18n="pricing.shortTerm.title">Court terme</h3>
                     <div class="pricing-amount">
-                        <span class="amount">À partir de 350 MAD</span>
-                        <span class="period">/jour</span>
+                        <span class="amount" data-i18n="pricing.shortTerm.price">À partir de 350 MAD</span>
+                        <span class="period" data-i18n="pricing.shortTerm.period">/jour</span>
                     </div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Kilométrage illimité</li>
-                        <li><i class="fas fa-check"></i> Assurance de base</li>
-                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
-                        <li><i class="fas fa-check"></i> Annulation gratuite</li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.shortTerm.features.0">Kilométrage illimité</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.shortTerm.features.1">Assurance de base</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.shortTerm.features.2">Assistance 24/7</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.shortTerm.features.3">Annulation gratuite</span></li>
                     </ul>
-                    <button class="btn-pricing">Choisir</button>
+                    <button class="btn-pricing" data-i18n="pricing.shortTerm.button">Choisir</button>
                 </div>
 
                 <div class="pricing-card featured">
-                    <div class="featured-badge">Recommandé</div>
-                    <h3>Moyen terme</h3>
+                    <div class="featured-badge" data-i18n="pricing.mediumTerm.badge">Recommandé</div>
+                    <h3 data-i18n="pricing.mediumTerm.title">Moyen terme</h3>
                     <div class="pricing-amount">
-                        <span class="amount">À partir de 7000 MAD</span>
-                        <span class="period">/mois</span>
+                        <span class="amount" data-i18n="pricing.mediumTerm.price">À partir de 7000 MAD</span>
+                        <span class="period" data-i18n="pricing.mediumTerm.period">/mois</span>
                     </div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Kilométrage illimité</li>
-                        <li><i class="fas fa-check"></i> Assurance tous risques</li>
-                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
-                        <li><i class="fas fa-check"></i> Conducteur additionnel</li>
-                        <li><i class="fas fa-check"></i> GPS inclus</li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.mediumTerm.features.0">Kilométrage illimité</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.mediumTerm.features.1">Assurance tous risques</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.mediumTerm.features.2">Assistance 24/7</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.mediumTerm.features.3">Conducteur additionnel</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.mediumTerm.features.4">GPS inclus</span></li>
                     </ul>
-                    <button class="btn-pricing">Choisir</button>
+                    <button class="btn-pricing" data-i18n="pricing.mediumTerm.button">Choisir</button>
                 </div>
 
                 <div class="pricing-card">
-                    <h3>Long terme</h3>
+                    <h3 data-i18n="pricing.longTerm.title">Long terme</h3>
                     <div class="pricing-amount">
-                        <span class="amount">Tarif personnalisé</span>
+                        <span class="amount" data-i18n="pricing.longTerm.price">Tarif personnalisé</span>
                     </div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Kilométrage illimité</li>
-                        <li><i class="fas fa-check"></i> Assurance tous risques</li>
-                        <li><i class="fas fa-check"></i> Assistance 24/7</li>
-                        <li><i class="fas fa-check"></i> Entretien inclus</li>
-                        <li><i class="fas fa-check"></i> Véhicule de remplacement</li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.longTerm.features.0">Kilométrage illimité</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.longTerm.features.1">Assurance tous risques</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.longTerm.features.2">Assistance 24/7</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.longTerm.features.3">Entretien inclus</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="pricing.longTerm.features.4">Véhicule de remplacement</span></li>
                     </ul>
-                    <button class="btn-pricing">Nous contacter</button>
+                    <button class="btn-pricing" data-i18n="pricing.longTerm.button">Nous contacter</button>
                 </div>
             </div>
         </div>
@@ -356,56 +377,56 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contactez-nous</h2>
+            <h2 class="section-title" data-i18n="contact.title">Contactez-nous</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Nos coordonnées</h3>
+                    <h3 data-i18n="contact.info">Nos coordonnées</h3>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Adresse</h4>
-                            <p>Rabat<br>Rabat</p>
+                            <h4 data-i18n="contact.address">Adresse</h4>
+                            <p data-i18n="contact.addressText">Rabat<br>Rabat</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h4>Téléphone</h4>
+                            <h4 data-i18n="contact.phone">Téléphone</h4>
                             <p>06 ** ** ** **</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
+                            <h4 data-i18n="contact.email">Email</h4>
                             <p>contact@autoloc.fr</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-clock"></i>
                         <div>
-                            <h4>Horaires</h4>
-                            <p>Lun - Sam: 8h00 - 20h00<br>Dim: 9h00 - 18h00</p>
+                            <h4 data-i18n="contact.hours">Horaires</h4>
+                            <p data-i18n="contact.hoursText">Lun - Sam: 8h00 - 20h00<br>Dim: 9h00 - 18h00</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-form">
-                    <h3>Envoyez-nous un message</h3>
+                    <h3 data-i18n="contact.formTitle">Envoyez-nous un message</h3>
                     <form>
                         <div class="form-group">
-                            <input type="text" placeholder="Votre nom" required>
+                            <input type="text" data-i18n-placeholder="contact.namePlaceholder" placeholder="Votre nom" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Votre email" required>
+                            <input type="email" data-i18n-placeholder="contact.emailPlaceholder" placeholder="Votre email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Votre téléphone">
+                            <input type="tel" data-i18n-placeholder="contact.phonePlaceholder" placeholder="Votre téléphone">
                         </div>
                         <div class="form-group">
-                            <textarea rows="5" placeholder="Votre message" required></textarea>
+                            <textarea rows="5" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Votre message" required></textarea>
                         </div>
-                        <button type="submit" class="btn-submit">Envoyer</button>
+                        <button type="submit" class="btn-submit" data-i18n="contact.sendButton">Envoyer</button>
                     </form>
                 </div>
             </div>
@@ -417,34 +438,34 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>À propos</h4>
+                    <h4 data-i18n="footer.about.title">À propos</h4>
                     <ul>
-                        <li><a href="pages/qui-sommes-nous.html">Qui sommes-nous</a></li>
-                        <li><a href="pages/notre-flotte.html">Notre flotte</a></li>
-                        <li><a href="pages/nos-agences.html">Nos agences</a></li>
-                        <li><a href="https://wa.me/212663730766?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20les%20opportunités%20de%20carrière%20chez%20AutoLoca." target="_blank">Carrières</a></li>
+                        <li><a href="pages/qui-sommes-nous.html" data-i18n="footer.about.whoWeAre">Qui sommes-nous</a></li>
+                        <li><a href="pages/notre-flotte.html" data-i18n="footer.about.ourFleet">Notre flotte</a></li>
+                        <li><a href="pages/nos-agences.html" data-i18n="footer.about.ourAgencies">Nos agences</a></li>
+                        <li><a href="https://wa.me/212663730766?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20les%20opportunités%20de%20carrière%20chez%20AutoLoca." target="_blank" data-i18n="footer.about.careers">Carrières</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Services</h4>
+                    <h4 data-i18n="footer.services.title">Services</h4>
                     <ul>
-                        <li><a href="#tarifs">Location courte durée</a></li>
-                        <li><a href="https://wa.me/212663730766?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20la%20location%20longue%20durée." target="_blank">Location longue durée</a></li>
-                        <li><a href="https://wa.me/212663730766?text=Bonjour,%20je%20souhaite%20louer%20un%20véhicule%20avec%20chauffeur." target="_blank">Location avec chauffeur</a></li>
-                        <li><a href="https://wa.me/212663730766?text=Bonjour,%20je%20représente%20une%20entreprise%20et%20souhaite%20des%20informations%20sur%20vos%20services." target="_blank">Entreprises</a></li>
+                        <li><a href="#tarifs" data-i18n="footer.services.shortTerm">Location courte durée</a></li>
+                        <li><a href="https://wa.me/212663730766?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20la%20location%20longue%20durée." target="_blank" data-i18n="footer.services.longTerm">Location longue durée</a></li>
+                        <li><a href="https://wa.me/212663730766?text=Bonjour,%20je%20souhaite%20louer%20un%20véhicule%20avec%20chauffeur." target="_blank" data-i18n="footer.services.withDriver">Location avec chauffeur</a></li>
+                        <li><a href="https://wa.me/212663730766?text=Bonjour,%20je%20représente%20une%20entreprise%20et%20souhaite%20des%20informations%20sur%20vos%20services." target="_blank" data-i18n="footer.services.business">Entreprises</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Informations</h4>
+                    <h4 data-i18n="footer.info.title">Informations</h4>
                     <ul>
-                        <li><a href="pages/conditions-generales.html">Conditions générales</a></li>
-                        <li><a href="pages/politique-confidentialite.html">Politique de confidentialité</a></li>
-                        <li><a href="pages/faq.html">FAQ</a></li>
-                        <li><a href="https://wa.me/212663730766?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20les%20assurances." target="_blank">Assurance</a></li>
+                        <li><a href="pages/conditions-generales.html" data-i18n="footer.info.terms">Conditions générales</a></li>
+                        <li><a href="pages/politique-confidentialite.html" data-i18n="footer.info.privacy">Politique de confidentialité</a></li>
+                        <li><a href="pages/faq.html" data-i18n="footer.info.faq">FAQ</a></li>
+                        <li><a href="https://wa.me/212663730766?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20les%20assurances." target="_blank" data-i18n="footer.info.insurance">Assurance</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Suivez-nous</h4>
+                    <h4 data-i18n="footer.social.title">Suivez-nous</h4>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -452,20 +473,26 @@
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
                     <div class="newsletter">
-                        <h5>Newsletter</h5>
+                        <h5 data-i18n="footer.social.newsletter">Newsletter</h5>
                         <form>
-                            <input type="email" placeholder="Votre email">
+                            <input type="email" data-i18n-placeholder="footer.social.emailPlaceholder" placeholder="Votre email">
                             <button type="submit"><i class="fas fa-paper-plane"></i></button>
                         </form>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 AutoLoc. Tous droits réservés.</p>
+                <p>&copy; 2026 AutoLoc. <span data-i18n="footer.copyright">Tous droits réservés.</span></p>
             </div>
         </div>
     </footer>
 
+    <!-- Load translations first -->
+    <script src="translations.js"></script>
+    <!-- Then load i18n system -->
+    <script src="i18n.js"></script>
+    <!-- Finally load main script -->
     <script src="script.js"></script>
 </body>
 </html>
+

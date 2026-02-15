@@ -480,6 +480,32 @@ body {
     animation: pulse 2s infinite;
 }
 
+.available-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #27ae60;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 10;
+    animation: slideInLeft 0.5s ease-out;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -1031,6 +1057,16 @@ body {
     
     .hero {
         padding-top: 120px;
+    }
+    
+    /* Désactiver l'effet parallaxe sur mobile pour garder le bouton rechercher visible */
+    .hero {
+        transform: none !important;
+    }
+    
+    .search-box {
+        position: relative;
+        z-index: 100;
     }
     
     .hero-content h1 {

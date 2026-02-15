@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Flotte - AutoLoca</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .content-section {
+            padding: 4rem 0;
+        }
+        .fleet-category {
+            margin-bottom: 4rem;
+        }
+        .fleet-category h3 {
+            color: #1e3c72;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #1e3c72;
+        }
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .fleet-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .fleet-item:hover {
+            transform: translateY(-10px);
+        }
+        .fleet-item i {
+            font-size: 3rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+        .fleet-item h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+        .fleet-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        .fleet-features li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+        .fleet-features li i {
+            font-size: 1rem;
+            color: #27ae60;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-car"></i>
+                <span>AutoLoca</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../index.html#vehicules">Véhicules</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#tarifs">Tarifs</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="language-selector">
+                <button class="lang-dropdown-btn" id="langDropdownBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">FR</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown-menu" id="langDropdownMenu">
+                    <button class="lang-option" data-lang="fr">
+                        <span class="lang-code">FR</span>
+                        <span class="lang-name">Français</span>
+                    </button>
+                    <button class="lang-option" data-lang="en">
+                        <span class="lang-code">EN</span>
+                        <span class="lang-name">English</span>
+                    </button>
+                    <button class="lang-option" data-lang="ar">
+                        <span class="lang-code">AR</span>
+                        <span class="lang-name">العربية</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-car-side"></i> Notre Flotte</h1>
+            <p>Des véhicules modernes et bien entretenus pour tous vos besoins</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <!-- Économique -->
+            <div class="fleet-category">
+                <h3><i class="fas fa-coins"></i> Véhicules Économiques</h3>
+                <div class="fleet-grid">
+                    <div class="fleet-item">
+                        <i class="fas fa-car"></i>
+                        <h4>Renault Clio</h4>
+                        <p>À partir de 35€/jour</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 5 places</li>
+                            <li><i class="fas fa-check"></i> Climatisation</li>
+                            <li><i class="fas fa-check"></i> Bluetooth</li>
+                            <li><i class="fas fa-check"></i> Économique</li>
+                        </ul>
+                    </div>
+                    <div class="fleet-item">
+                        <i class="fas fa-car"></i>
+                        <h4>Citroën C3</h4>
+                        <p>À partir de 32€/jour</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 5 places</li>
+                            <li><i class="fas fa-check"></i> Climatisation</li>
+                            <li><i class="fas fa-check"></i> Radio</li>
+                            <li><i class="fas fa-check"></i> Confortable</li>
+                        </ul>
+                    </div>
+                    <div class="fleet-item">
+                        <i class="fas fa-car"></i>
+                        <h4>Dacia Sandero</h4>
+                        <p>À partir de 30€/jour</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 5 places</li>
+                            <li><i class="fas fa-check"></i> Spacieux</li>
+                            <li><i class="fas fa-check"></i> Fiable</li>
+                            <li><i class="fas fa-check"></i> Économique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compact -->
+            <div class="fleet-category">
+                <h3><i class="fas fa-car-side"></i> Véhicules Compacts</h3>
+                <div class="fleet-grid">
+                    <div class="fleet-item">
+                        <i class="fas fa-car"></i>
+                        <h4>Peugeot 308</h4>
+                        <p>À partir de 45€/jour</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 5 places</li>
+                            <li><i class="fas fa-check"></i> Automatique</li>
+                            <li><i class="fas fa-check"></i> GPS intégré</li>
+                            <li><i class="fas fa-check"></i> Confort premium</li>
+                        </ul>
+                    </div>
+                    <div class="fleet-item">
+                        <i class="fas fa-car"></i>
+                        <h4>Volkswagen Golf</h4>
+                        <p>À partir de 48€/jour</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 5 places</li>
+                            <li><i class="fas fa-check"></i> Automatique</li>
+                            <li><i class="fas fa-check"></i> Caméra de recul</li>
+                            <li><i class="fas fa-check"></i> Sportif</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUV -->
+            <div class="fleet-category">
+                <h3><i class="fas fa-truck-pickup"></i> SUV & 4x4</h3>
+                <div class="fleet-grid">
+                    <div class="fleet-item">
+                        <i class="fas fa-car"></i>
+                        <h4>BMW X3</h4>
+                        <p>À partir de 85€/jour</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 5 places</li>
+                            <li><i class="fas fa-check"></i> 4x4</li>
+                            <li><i class="fas fa-check"></i> Cuir</li>
+                            <li><i class="fas fa-check"></i> Premium</li>
+                        </ul>
+                    </div>
+                    <div class="fleet-item">
+                        <i class="fas fa-car"></i>
+                        <h4>Audi Q5</h4>
+                        <p>À partir de 95€/jour</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 5 places</li>
+                            <li><i class="fas fa-check"></i> Quattro</li>
+                            <li><i class="fas fa-check"></i> Luxueux</li>
+                            <li><i class="fas fa-check"></i> Technologie avancée</li>
+                        </ul>
+                    </div>
+                    <div class="fleet-item">
+                        <i class="fas fa-car"></i>
+                        <h4>Peugeot 3008</h4>
+                        <p>À partir de 75€/jour</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 5 places</li>
+                            <li><i class="fas fa-check"></i> Hybride</li>
+                            <li><i class="fas fa-check"></i> Écologique</li>
+                            <li><i class="fas fa-check"></i> Moderne</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Luxe -->
+            <div class="fleet-category">
+                <h3><i class="fas fa-gem"></i> Véhicules de Luxe</h3>
+                <div class="fleet-grid">
+                    <div class="fleet-item">
+                        <i class="fas fa-car"></i>
+                        <h4>Mercedes Classe C</h4>
+                        <p>À partir de 120€/jour</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 5 places</li>
+                            <li><i class="fas fa-check"></i> Cuir premium</li>
+                            <li><i class="fas fa-check"></i> Système audio Burmester</li>
+                            <li><i class="fas fa-check"></i> Prestige</li>
+                        </ul>
+                    </div>
+                    <div class="fleet-item">
+                        <i class="fas fa-car"></i>
+                        <h4>BMW Série 5</h4>
+                        <p>À partir de 130€/jour</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 5 places</li>
+                            <li><i class="fas fa-check"></i> Conduite autonome</li>
+                            <li><i class="fas fa-check"></i> Luxe absolu</li>
+                            <li><i class="fas fa-check"></i> Performance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 AutoLoca. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load translations first -->
+    <script src="../translation/translations.js"></script>
+    <!-- Then load i18n system -->
+    <script src="../translation/i18n.js"></script>
+    <!-- Finally load main script -->
+    <script src="../script.js"></script>
+</body>
+</html>

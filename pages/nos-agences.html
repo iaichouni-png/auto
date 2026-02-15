@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Agences - AutoLoca</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .content-section {
+            padding: 4rem 0;
+        }
+        .agencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .agency-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .agency-card:hover {
+            transform: translateY(-10px);
+        }
+        .agency-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .agency-header i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .agency-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .agency-body {
+            padding: 2rem;
+        }
+        .agency-info {
+            margin-bottom: 1.5rem;
+        }
+        .agency-info i {
+            color: #1e3c72;
+            margin-right: 1rem;
+            width: 20px;
+        }
+        .agency-info p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+        .agency-hours {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+        .agency-hours h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-car"></i>
+                <span>AutoLoca</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../index.html#vehicules">Véhicules</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#tarifs">Tarifs</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="language-selector">
+                <button class="lang-dropdown-btn" id="langDropdownBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">FR</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown-menu" id="langDropdownMenu">
+                    <button class="lang-option" data-lang="fr">
+                        <span class="lang-code">FR</span>
+                        <span class="lang-name">Français</span>
+                    </button>
+                    <button class="lang-option" data-lang="en">
+                        <span class="lang-code">EN</span>
+                        <span class="lang-name">English</span>
+                    </button>
+                    <button class="lang-option" data-lang="ar">
+                        <span class="lang-code">AR</span>
+                        <span class="lang-name">العربية</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-map-marked-alt"></i> Nos Agences</h1>
+            <p>Trouvez l'agence AutoLoca la plus proche de vous</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="agencies-grid">
+                <!-- Agence Rabat Centre -->
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <i class="fas fa-building"></i>
+                        <h3>Rabat Centre</h3>
+                        <p>Agence Principale</p>
+                    </div>
+                    <div class="agency-body">
+                        <div class="agency-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Avenue Mohammed V, Rabat 10000</p>
+                            <p><i class="fas fa-phone"></i> +212 537 XX XX XX</p>
+                            <p><i class="fas fa-envelope"></i> rabat@autoloca.ma</p>
+                        </div>
+                        <div class="agency-hours">
+                            <h4><i class="fas fa-clock"></i> Horaires d'ouverture</h4>
+                            <p>Lundi - Samedi: 8h00 - 20h00</p>
+                            <p>Dimanche: 9h00 - 18h00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agence Casablanca -->
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <i class="fas fa-building"></i>
+                        <h3>Casablanca</h3>
+                        <p>Centre Ville</p>
+                    </div>
+                    <div class="agency-body">
+                        <div class="agency-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Boulevard Zerktouni, Casablanca 20000</p>
+                            <p><i class="fas fa-phone"></i> +212 522 XX XX XX</p>
+                            <p><i class="fas fa-envelope"></i> casablanca@autoloca.ma</p>
+                        </div>
+                        <div class="agency-hours">
+                            <h4><i class="fas fa-clock"></i> Horaires d'ouverture</h4>
+                            <p>Lundi - Samedi: 8h00 - 20h00</p>
+                            <p>Dimanche: 9h00 - 18h00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agence Marrakech -->
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <i class="fas fa-building"></i>
+                        <h3>Marrakech</h3>
+                        <p>Guéliz</p>
+                    </div>
+                    <div class="agency-body">
+                        <div class="agency-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Avenue Mohammed VI, Marrakech 40000</p>
+                            <p><i class="fas fa-phone"></i> +212 524 XX XX XX</p>
+                            <p><i class="fas fa-envelope"></i> marrakech@autoloca.ma</p>
+                        </div>
+                        <div class="agency-hours">
+                            <h4><i class="fas fa-clock"></i> Horaires d'ouverture</h4>
+                            <p>Lundi - Samedi: 8h00 - 20h00</p>
+                            <p>Dimanche: 9h00 - 18h00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agence Tanger -->
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <i class="fas fa-building"></i>
+                        <h3>Tanger</h3>
+                        <p>Centre Ville</p>
+                    </div>
+                    <div class="agency-body">
+                        <div class="agency-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Boulevard Pasteur, Tanger 90000</p>
+                            <p><i class="fas fa-phone"></i> +212 539 XX XX XX</p>
+                            <p><i class="fas fa-envelope"></i> tanger@autoloca.ma</p>
+                        </div>
+                        <div class="agency-hours">
+                            <h4><i class="fas fa-clock"></i> Horaires d'ouverture</h4>
+                            <p>Lundi - Samedi: 8h00 - 20h00</p>
+                            <p>Dimanche: 9h00 - 18h00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agence Agadir -->
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <i class="fas fa-building"></i>
+                        <h3>Agadir</h3>
+                        <p>Front de Mer</p>
+                    </div>
+                    <div class="agency-body">
+                        <div class="agency-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Boulevard du 20 Août, Agadir 80000</p>
+                            <p><i class="fas fa-phone"></i> +212 528 XX XX XX</p>
+                            <p><i class="fas fa-envelope"></i> agadir@autoloca.ma</p>
+                        </div>
+                        <div class="agency-hours">
+                            <h4><i class="fas fa-clock"></i> Horaires d'ouverture</h4>
+                            <p>Lundi - Samedi: 8h00 - 20h00</p>
+                            <p>Dimanche: 9h00 - 18h00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agence Aéroport -->
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <i class="fas fa-plane"></i>
+                        <h3>Aéroport Mohammed V</h3>
+                        <p>Service 24/7</p>
+                    </div>
+                    <div class="agency-body">
+                        <div class="agency-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Aéroport Mohammed V, Casablanca</p>
+                            <p><i class="fas fa-phone"></i> +212 522 XX XX XX</p>
+                            <p><i class="fas fa-envelope"></i> aeroport@autoloca.ma</p>
+                        </div>
+                        <div class="agency-hours">
+                            <h4><i class="fas fa-clock"></i> Horaires d'ouverture</h4>
+                            <p>Ouvert 24h/24 - 7j/7</p>
+                            <p>Service de navette disponible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 AutoLoca. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load translations first -->
+    <script src="../translation/translations.js"></script>
+    <!-- Then load i18n system -->
+    <script src="../translation/i18n.js"></script>
+    <!-- Finally load main script -->
+    <script src="../script.js"></script>
+</body>
+</html>
